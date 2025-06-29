@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vende tu stock - Outlet Stock</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #e74c3c;
+      --bg: #f8f8f8;
+      --text: #333;
+      --gray: #ccc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero {
+  background: url('img/hero.jpg') center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+    .logo-img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
+
+    .form-section {
+      background-color: #fff;
+      border-radius: 12px;
+      margin: 30px 0;
+      padding: 40px 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-align: center;
+      color: var(--primary);
+    }
+
+    .form-subtitle {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #666;
+    }
+
+    .info-section {
+      background-color: #f0f0f0;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .info-title {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background-color: #e2e2e2;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .required-field::after {
+      content: " *";
+      color: var(--primary);
+    }
+
+    input, select, textarea {
+      padding: 12px;
+      border: 1px solid var(--gray);
+      border-radius: 6px;
+      font-size: 15px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .btn-submit {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #c0392b;
+    }
+
+    footer {
+      background-color: #222;
+      color: #ccc;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+
+    .footer-logo {
+      width: 140px;
+      margin-bottom: 10px;
+    }
+
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <img src="img/logo-outlet-stock.png" alt="Logo Outlet Stock" class="logo-img"/>
+      <h1>Vende tu stock</h1>
+      <p>Compramos tus excedentes, liquidaciones y devoluciones al mejor precio</p>
+    </div>
+  </header>
+
+  <section class="form-section">
+    <div class="container">
+      <h2 class="form-title">¿TIENES STOCK PARA VENDER?</h2>
+      <p class="form-subtitle">Rellena este formulario y recibirás una oferta en menos de 24 horas</p>
+
+      <div class="info-section">
+        <h3 class="info-title"><i class="fas fa-info-circle"></i> COMPRAMOS TODOS ESTOS PRODUCTOS:</h3>
+        <div class="category-tags">
+          <span class="tag">Textil y ropa</span>
+          <span class="tag">Calzado</span>
+          <span class="tag">Electrodomésticos</span>
+          <span class="tag">Productos descatalogados</span>
+          <span class="tag">Existencias</span>
+          <span class="tag">Devoluciones</span>
+          <span class="tag">Higiene personal</span>
+          <span class="tag">Salud y belleza</span>
+          <span class="tag">Hogar</span>
+          <span class="tag">Deportes</span>
+          <span class="tag">Juguetes</span>
+          <span class="tag">Otros productos</span>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/xvgrloqy" method="POST">
+        <input type="hidden" name="_subject" value="Nueva consulta de stock desde web">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre" class="required-field">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="empresa">Empresa (opcional)</label>
+            <input type="text" id="empresa" name="empresa">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email" class="required-field">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono" class="required-field">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="categoria" class="required-field">Categoría principal del stock</label>
+          <select id="categoria" name="categoria" required>
+            <option value="" disabled selected>Selecciona la categoría principal</option>
+            <option value="textil">Textil y ropa</option>
+            <option value="calzado">Calzado</option>
+            <option value="electrodomesticos">Electrodomésticos</option>
+            <option value="higiene">Higiene personal</option>
+            <option value="belleza">Salud y belleza</option>
+            <option value="hogar">Hogar</option>
+            <option value="deportes">Deportes</option>
+            <option value="juguetes">Juguetes</option>
+            <option value="otros">Otros productos</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cantidad" class="required-field">Cantidad aproximada</label>
+            <select id="cantidad" name="cantidad" required>
+              <option value="" disabled selected>Selecciona</option>
+              <option value="1-100">1-100 unidades</option>
+              <option value="101-500">101-500 unidades</option>
+              <option value="501-1000">501-1,000 unidades</option>
+              <option value="1001-5000">1,001-5,000 unidades</option>
+              <option value="5000+">Más de 5,000 unidades</option>
+              <option value="palets">Varios palets</option>
+              <option value="contenedor">Contenedor completo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="condicion" class="required-field">Condición del stock</label>
+            <select id="condicion" name="condicion" required>
+              <option value="" disabled selected>Selecciona</option>
+              <option value="nuevo">Nuevo con etiquetas</option>
+              <option value="nuevo_sin_etiquetas">Nuevo sin etiquetas</option>
+              <option value="segunda">Segunda mano en buen estado</option>
+              <option value="defectuoso">Con defectuaciones</option>
+              <option value="devoluciones">Devoluciones de clientes</option>
+              <option value="liquidacion">Liquidación de stock</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="origen" class="required-field">Origen del stock</label>
+          <select id="origen" name="origen" required>
+            <option value="" disabled selected>Selecciona</option>
+            <option value="excedente">Excedente de producción</option>
+            <option value="devoluciones">Devoluciones de clientes</option>
+            <option value="descatalogado">Productos descatalogados</option>
+            <option value="temporada">Fin de temporada</option>
+            <option value="cierre">Cierre de negocio</option>
+            <option value="otros">Otros orígenes</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje" class="required-field">Detalles sobre el stock</label>
+          <textarea id="mensaje" name="mensaje" required placeholder="Describe los productos: marcas, modelos, tallas, colores, estado real, embalaje, motivo de venta, etc."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="documentacion">Documentación disponible (fotos, listados, etc.)</label>
+          <input type="text" id="documentacion" name="documentacion" placeholder="Ej: Tengo fotos, listado Excel, códigos EAN...">
+        </div>
+
+        <div class="form-group">
+          <label for="ubicacion" class="required-field">Ubicación del stock</label>
+          <input type="text" id="ubicacion" name="ubicacion" required placeholder="Ciudad y provincia donde se encuentra la mercancía">
+        </div>
+
+        <button type="submit" class="btn-submit">SOLICITAR VALORACIÓN</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <img src="img/logo-outlet-stock.png" alt="Logo Outlet Stock" class="footer-logo"/>
+      <p>&copy; 2025 Outlet Stock. Compramos todo tipo de stock y excedentes.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
