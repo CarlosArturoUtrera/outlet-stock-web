@@ -4,8 +4,6 @@
   --light: #ecf0f1;
   --dark: #1a252f;
   --text: #333;
-  --link-color: #3498db;
-  --link-hover: #2980b9;
 }
 
 /* Reset y estilos base */
@@ -30,8 +28,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-              url('img/hero.jpg') no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/hero.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
   padding: 120px 0;
@@ -50,6 +47,18 @@ body {
   font-size: 1.3rem;
   max-width: 700px;
   margin: 0 auto 30px;
+}
+
+.logo-top {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.logo-img {
+  width: 160px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Botones */
@@ -103,9 +112,7 @@ body {
   z-index: 1;
 }
 
-/* ========================================== */
-/* GALERÍA DE 6 IMÁGENES (3 ARRIBA + 3 ABAJO) */
-/* ========================================== */
+/* Galería de servicios (ACTUALIZADA - 9 PRODUCTOS) */
 .servicios {
   padding: 100px 0;
   background-color: var(--light);
@@ -113,8 +120,8 @@ body {
 
 .galeria-servicios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
   margin: 50px 0;
 }
 
@@ -125,7 +132,6 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
   text-align: center;
-  position: relative;
 }
 
 .item-servicio:hover {
@@ -135,7 +141,7 @@ body {
 
 .item-servicio img {
   width: 100%;
-  height: 220px; /* Aumenté el alto de 180px a 220px */
+  height: 180px;
   object-fit: cover;
   transition: transform 0.5s;
 }
@@ -145,43 +151,12 @@ body {
 }
 
 .item-servicio h3 {
-  padding: 18px; /* Aumenté el padding */
+  padding: 15px;
   color: var(--primary);
-  font-size: 1.2rem; /* Texto un poco más grande */
-  margin: 0;
-  background: white;
-  position: relative;
-  z-index: 2;
+  font-size: 1.1rem;
 }
 
-/* Ajustes responsive */
-@media (max-width: 992px) {
-  .galeria-servicios {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-  
-  .item-servicio img {
-    height: 200px;
-  }
-}
-
-@media (max-width: 768px) {
-  .item-servicio img {
-    height: 180px;
-  }
-}
-
-@media (max-width: 576px) {
-  .galeria-servicios {
-    grid-template-columns: 1fr; /* 1 columna en móviles */
-  }
-  
-  .item-servicio img {
-    height: 220px;
-  }
-}
-
-/* Segundo cuadro de categorías especiales */
+/* Categorías especiales */
 .categorias-especiales {
   background: rgba(255,255,255,0.9);
   padding: 25px;
@@ -216,7 +191,6 @@ body {
   font-weight: 500;
 }
 
-/* ========================================== */
 /* Lista de valores */
 .card-list {
   list-style: none;
@@ -242,7 +216,7 @@ body {
   font-size: 1.5rem;
 }
 
-/* Estilos de contacto */
+/* Sección Contacto */
 .contact-info {
   margin: 40px 0;
   text-align: center;
@@ -276,7 +250,6 @@ body {
   color: var(--secondary);
 }
 
-/* Estilos específicos para el botón en sección de contacto */
 .cta .btn {
   margin-top: 30px;
   background: var(--secondary);
@@ -329,23 +302,8 @@ footer {
   }
 }
 
-/* Estilos para el logo */
-.logo-top {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.logo-img {
-  width: 160px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-}
-
-/* ========================================== */
-/* RESPONSIVE */
-/* ========================================== */
-@media (max-width: 992px) {
+/* Responsive */
+@media (max-width: 1200px) {
   .galeria-servicios {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -360,21 +318,8 @@ footer {
     font-size: 2.5rem;
   }
 
-  .item-servicio img {
-    height: 200px;
-  }
-  
   .logo-img {
     width: 120px;
-  }
-  
-  .lista-categorias {
-    gap: 10px;
-  }
-  
-  .lista-categorias span {
-    padding: 6px 12px;
-    font-size: 0.8rem;
   }
 }
 
@@ -382,24 +327,16 @@ footer {
   .galeria-servicios {
     grid-template-columns: 1fr;
   }
-  
+
   .hero h1 {
     font-size: 2rem;
   }
-  
+
   .logo-img {
     width: 100px;
   }
-  
+
   .item-servicio img {
-    height: 220px;
-  }
-  
-  .contact-info a {
-    font-size: 0.9rem;
-  }
-  
-  .contact-info i {
-    margin-right: 8px;
+    height: 200px;
   }
 }
