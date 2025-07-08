@@ -112,65 +112,7 @@ body {
   z-index: 1;
 }
 
-/* ============ NUEVOS ESTILOS PARA COLLAGE CALZADO ============ */
-.collage-calzado {
-  display: flex;
-  height: 180px;
-  position: relative;
-  border-radius: 10px 10px 0 0;
-  overflow: hidden;
-}
-
-.mitad-imagen {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-.mitad-imagen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.mitad-imagen:first-child img {
-  object-position: right center;
-}
-
-.mitad-imagen:last-child img {
-  object-position: left center;
-}
-
-.texto-mitad {
-  position: absolute;
-  bottom: 10px;
-  background: rgba(0,0,0,0.7);
-  color: white;
-  padding: 3px 10px;
-  font-size: 0.8rem;
-  border-radius: 3px;
-  z-index: 2;
-}
-
-.mitad-imagen:first-child .texto-mitad {
-  left: 10px;
-}
-
-.mitad-imagen:last-child .texto-mitad {
-  right: 10px;
-}
-
-/* Efecto hover para el collage */
-.collage-calzado:hover .mitad-imagen:first-child img {
-  transform: scale(1.05) translateX(-3px);
-}
-
-.collage-calzado:hover .mitad-imagen:last-child img {
-  transform: scale(1.05) translateX(3px);
-}
-
-/* ============ ESTILOS EXISTENTES GALERÍA ============ */
+/* ============ ESTILOS GALERÍA ============ */
 .servicios {
   padding: 100px 0;
   background-color: var(--light);
@@ -394,13 +336,7 @@ footer {
     width: 100px;
   }
 
-  .item-servicio img,
-  .collage-calzado {
+  .item-servicio img {
     height: 200px;
-  }
-  
-  .texto-mitad {
-    font-size: 0.7rem;
-    padding: 2px 8px;
   }
 }
